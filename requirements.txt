@@ -10,6 +10,8 @@ matplotlib
 pandas
 opencv-python
 psutil
+scikit-learn
+tabulate
 tqdm
 swanlab
 fvcore

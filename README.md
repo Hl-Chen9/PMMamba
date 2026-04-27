@@ -8,9 +8,11 @@ This repository contains the minimal RADDet fine-tuning and evaluation code for 
 - `engine_finetune.py`: training and validation loops.
 - `models/mamba_raddet.py`: Mamba detector.
 - `models/RADDet_finetune/`: RADDet dataset loader, YOLO head/loss, mAP evaluation, anchors, and config.
+- `datasets/RADDet.py`: RADDet RAD tensor dataset utility for pretraining/data checks.
 - `utils.py`: distributed training, logging, checkpoint, and optimizer helpers.
 - `selective_scan_interface.py`: selective-scan interface used by the Mamba model.
 - `run_finetune_mamba.sh`: runnable shell template.
+- `benchmark_mamba_raddet.py`: latency/FPS/memory benchmark for `RadarMamba_fpn`.
 
 Training outputs, checkpoints, datasets, logs, notebooks, and all non-RADDet code are ignored by `.gitignore`.
 
@@ -35,6 +37,8 @@ Edit `models/RADDet_finetune/config.json` before running:
 
 `data/` is ignored by Git, so it can be a local copy or a symlink.
 
+If you use `datasets/RADDet.py` directly, edit `datasets/RADDet_config.json` in the same way.
+
 ## Run
 
 Fine-tune:
@@ -47,6 +51,12 @@ Evaluate from a checkpoint:
 
 ```bash
 GPUS=0 NPROC_PER_NODE=1 EVAL_ONLY=1 FINETUNE=/path/to/checkpoint.pth bash run_finetune_mamba.sh
+```
+
+Benchmark:
+
+```bash
+python benchmark_mamba_raddet.py
 ```
 
 ## Upload

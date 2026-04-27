@@ -7,10 +7,16 @@
 !requirements.txt
 
 !run_finetune_mamba.sh
+!benchmark_mamba_raddet.py
 !main_finetune_mamba.py
 !engine_finetune.py
 !utils.py
 !selective_scan_interface.py
+
+!datasets/
+/datasets/*
+!datasets/RADDet.py
+!datasets/RADDet_config.json
 
 !models/
 /models/*
