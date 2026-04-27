@@ -1,0 +1,17 @@
+# Install torch and torchvision with the CUDA build that matches your system.
+torch
+torchvision
+
+numpy
+scipy
+einops
+timm
+matplotlib
+pandas
+opencv-python
+psutil
+tqdm
+swanlab
+fvcore
+causal-conv1d
+mamba-ssm

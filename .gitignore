@@ -1,0 +1,73 @@
+# RADDet-only public upload whitelist.
+# Everything is ignored by default; only the files unignored below are staged by `git add .`.
+/*
+
+!.gitignore
+!README.md
+!requirements.txt
+
+!run_finetune_mamba.sh
+!main_finetune_mamba.py
+!engine_finetune.py
+!utils.py
+!selective_scan_interface.py
+
+!models/
+/models/*
+!models/__init__.py
+!models/mamba_raddet.py
+!models/RADDet_finetune/
+!models/RADDet_finetune/**
+
+# Keep generated and duplicate files out even under whitelisted directories.
+__pycache__/
+*.py[cod]
+*.log
+*.npy
+*.npz
+*.mat
+*.h5
+*.pkl
+*.pickle
+*.pt
+*.pth
+*.ckpt
+*.bin
+*.onnx
+*.tar
+*.tar.gz
+*.zip
+*.ipynb
+* copy*.py
+*_backup.py
+*backup*.py
+*backup*.json
+models/RADDet_finetune/* copy*.py
+models/RADDet_finetune/*backup*
+models/RADDet_finetune/__pycache__/
+models/RADDet_finetune/RADDet_finetune_dataset_cart.py
+models/RADDet_finetune/anchors_cartboxes.txt
+models/RADDet_finetune/config_cart.json
+models/RADDet_finetune/drawer.py
+models/RADDet_finetune/radar_dataset_plot.py
+
+# Local outputs, datasets, trackers, and editor state.
+data/
+output_dir/
+debug_dir/
+ft_output_dir/
+ft_*_output_dir/
+sweep_dir/
+wandb/
+wandb_dir/
+swanlab_dir/
+runs/
+logs/
+visualize/
+visualizations/
+visualizations1/
+final_*visualizations*/
+.vscode/
+.idea/
+.DS_Store
+.ipynb_checkpoints/
